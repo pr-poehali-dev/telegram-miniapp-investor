@@ -72,26 +72,9 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-20">
-      <div className="container max-w-2xl mx-auto p-4 space-y-4">
+    <div className="min-h-screen bg-background">
+      <div className="container max-w-2xl mx-auto p-4 space-y-4 pb-24">
         <Tabs defaultValue="home" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 bg-card/50 backdrop-blur">
-            <TabsTrigger value="home" className="data-[state=active]:bg-primary">
-              <Icon name="Home" size={20} />
-            </TabsTrigger>
-            <TabsTrigger value="portfolio" className="data-[state=active]:bg-primary">
-              <Icon name="PieChart" size={20} />
-            </TabsTrigger>
-            <TabsTrigger value="wallet" className="data-[state=active]:bg-primary">
-              <Icon name="Wallet" size={20} />
-            </TabsTrigger>
-            <TabsTrigger value="bonuses" className="data-[state=active]:bg-primary">
-              <Icon name="Gift" size={20} />
-            </TabsTrigger>
-            <TabsTrigger value="partners" className="data-[state=active]:bg-primary">
-              <Icon name="Users" size={20} />
-            </TabsTrigger>
-          </TabsList>
 
           <TabsContent value="home" className="space-y-4 mt-4">
             <Card className="p-6 bg-gradient-to-br from-primary/20 to-secondary/20 border-primary/30">
@@ -445,6 +428,48 @@ export default function Index() {
             </Card>
           </TabsContent>
         </Tabs>
+      </div>
+
+      <div className="fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-lg border-t border-border z-50">
+        <div className="container max-w-2xl mx-auto">
+          <div className="grid grid-cols-5 gap-1 p-2">
+            <button
+              onClick={() => document.querySelector('[value="home"]')?.click()}
+              className="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              <Icon name="Home" size={22} />
+              <span className="text-xs">Главная</span>
+            </button>
+            <button
+              onClick={() => document.querySelector('[value="portfolio"]')?.click()}
+              className="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              <Icon name="PieChart" size={22} />
+              <span className="text-xs">Портфель</span>
+            </button>
+            <button
+              onClick={() => document.querySelector('[value="wallet"]')?.click()}
+              className="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              <Icon name="Wallet" size={22} />
+              <span className="text-xs">Кошелек</span>
+            </button>
+            <button
+              onClick={() => document.querySelector('[value="bonuses"]')?.click()}
+              className="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              <Icon name="Gift" size={22} />
+              <span className="text-xs">Бонусы</span>
+            </button>
+            <button
+              onClick={() => document.querySelector('[value="partners"]')?.click()}
+              className="flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              <Icon name="Users" size={22} />
+              <span className="text-xs">Партнеры</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
